@@ -1,0 +1,42 @@
+<div class="container">
+
+        <h1 class="h1">
+            <?php $this->getPageTitle(); ?>
+            <a href="/posts/create" class="btn btn-primary float-right">
+                <i class="glyphicon glyphicon-print"></i> New Post
+            </a>
+        </h1>
+
+    <?php $this->renderView("alerts/_success") ?>
+    <?php $this->renderView("alerts/_errors") ?>
+
+    <?php foreach ($this->view->posts as $post): ?>
+    <div class="row">
+        <h3 class="h3">
+            <a href="/posts/<?php echo $post->id?>/show">
+                <?php echo $post->title; ?>
+            </a>
+        </h3>
+    </div>
+    <div class="row">
+        <p class="text-justify">
+            <?php echo $post->content?>
+        </p>
+    </div>
+
+
+
+
+        <p class="text-right">
+            <a href="/posts/<?php echo $post->id?>/delete" class="btn btn-danger" onclick="return confirm('Deseja mesmo excluir');">
+                Excluir
+            </a>
+            <a href="/posts/<?php echo $post->id?>/edit" class="btn btn-secondary">
+                Editar
+            </a>
+        </p>
+
+    <hr/>
+    <?php endforeach;?>
+
+</div>

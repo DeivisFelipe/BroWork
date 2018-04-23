@@ -1,0 +1,20 @@
+{
+  "name":"Browork/Browork",
+  "Description":"Browork à framework MVC",
+  "Licence": "MIT",
+  "type":"project",
+  "author":[
+    {"nome":"Deivis Felipe Guerreiro Fagundes","email":"guerreirodosul01@gmail.com"}
+  ],
+  "autoload":{
+    "psr-4":{
+      "App\\":"app/",
+      "Core\\":"core/"
+    }
+  },
+
+  "require":{
+    "cboden/ratchet": "0.4.*",
+    "php": ">=5.4"
+  }
+}
